@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,16 @@ public class Player : MonoBehaviour
         {
             Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Translate(Vector2.left * Time.deltaTime * speed);
+        }
+
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Translate(Vector2.right * Time.deltaTime * speed);
+        }
+
     }
 
 }
