@@ -36,7 +36,10 @@ public class player : MonoBehaviour
             rb.velocity = velocity;
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(bulletPrefab, transform.position, transform.rotation);
+        }
     }
-
- }
+}
 
