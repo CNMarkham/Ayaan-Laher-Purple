@@ -18,5 +18,25 @@ public class ScreenWarp : MonoBehaviour
     {
         float x = transform.position.x;
         float y = transform.position.y;
+        //Left side
+        if (x > screenMax.x)
+        {
+            transform.position = new Vector2(screenMin.x, y);
+        }
+        //Right side
+        if (x < screenMin.x)
+        {
+            transform.position = new Vector2(screenMax.x, y);
+        }
+        //Top side
+        if(y > screenMax.y)
+        {
+            transform.position = new Vector2(x, screenMin.y);
+        }
+        //Bottom side
+        if (y < screenMin.y)
+        {
+            transform.position = new Vector2(x, screenMax.y);
+        }
     }
 }
