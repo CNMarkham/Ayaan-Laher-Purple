@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            nextDirection - newDirection;
+            nextDirection = newDirection;
         }
     }
 }
