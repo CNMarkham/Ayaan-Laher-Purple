@@ -5,7 +5,7 @@ using UnityEngine;
 public class PacMan : Movement
 {
     void Update()
-    { 
+    {
         if (nextDirection != Vector2.zero)
         {
             SetDirection(nextDirection);
@@ -13,4 +13,17 @@ public class PacMan : Movement
 
         ChildUpdate();
     }
+
+    protected override void ChildUpdate()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        if (horizontal != 0 || vertical != 0)
+        {
+            SetDirection(new Vector2(horizontal, vertical));
+        }
+        transform.right = direction;
+    }
 }
+
