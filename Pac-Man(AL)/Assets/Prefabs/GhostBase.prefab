@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 171820222846143211}
   - component: {fileID: 171820222846143210}
   - component: {fileID: 171820222846143125}
+  - component: {fileID: -5677058316963888638}
   m_Layer: 7
   m_Name: GhostBase
   m_TagString: Ghost
@@ -95,6 +96,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5677058316963888638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171820222846143124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b87a501b1b38e643a90e1f904c71f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &171820223119185334
 GameObject:
   m_ObjectHideFlags: 0
