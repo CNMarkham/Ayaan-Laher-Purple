@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 171820222846143211}
   - component: {fileID: 171820222846143210}
   - component: {fileID: 171820222846143125}
-  - component: {fileID: -5677058316963888638}
+  - component: {fileID: 6821048877992827373}
   m_Layer: 7
   m_Name: GhostBase
   m_TagString: Ghost
@@ -122,7 +122,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-5677058316963888638
+--- !u!114 &6821048877992827373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   blue: {fileID: 171820223119185334}
   white: {fileID: 171820224608182097}
   atHome: 0
-  homeDirection: 0
+  homeDuration: 0
 --- !u!1 &171820223119185334
 GameObject:
   m_ObjectHideFlags: 0
