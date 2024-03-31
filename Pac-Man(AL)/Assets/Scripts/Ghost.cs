@@ -81,8 +81,8 @@ public class Ghost : Movement
         atHome = false;
         body.SetActive(true);
         eyes.SetActive(true);
-        white.SetActive(true);
-        blue.SetActive(true);
+        white.SetActive(false);
+        blue.SetActive(false);
     }
 
     public void Frighten()
