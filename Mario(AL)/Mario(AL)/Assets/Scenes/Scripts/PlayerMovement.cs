@@ -56,4 +56,21 @@ public class PlayerMovement : MonoBehaviour
     {
       jumping = false;
     }
+
+    private void FlipDirection()
+    {
+        foreach (SpriteRenderer sprite in GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.flipX = rb.velocity.x < 0;
+        }
+    }
+    private void ChageAnimations()
+    {
+        foreach (Animator animator in GetComponentsInChildren<Animator>())
+        {
+            animator.SetFloat("velocityX", rb.velocity.x);
+            animator.SetFloat("horizontalInput", Input.GetAxis("Horizontyl"));
+            animator.SetBool("inAir", hit.collider == null || jumping);
+        }
+    }
 }
