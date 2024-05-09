@@ -721,7 +721,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.07, y: 6.11, z: -10}
+  m_LocalPosition: {x: 8.56, y: 6.11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -799,11 +799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4541255219130099647, guid: d067bf0eb18cbd34284cf963b21ad35e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.176
+      value: 15.9
       objectReference: {fileID: 0}
     - target: {fileID: 4541255219130099647, guid: d067bf0eb18cbd34284cf963b21ad35e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.79
       objectReference: {fileID: 0}
     - target: {fileID: 4541255219130099647, guid: d067bf0eb18cbd34284cf963b21ad35e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -840,7 +840,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3937493891285462825, guid: d067bf0eb18cbd34284cf963b21ad35e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1976719159}
   m_SourcePrefab: {fileID: 100100000, guid: d067bf0eb18cbd34284cf963b21ad35e, type: 3}
 --- !u!1 &678898911
 GameObject:
@@ -1498,11 +1501,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5417777325475075346, guid: 75db4e4af643d35439f44e5af59d2bd4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.2986364
+      value: 9.37
       objectReference: {fileID: 0}
     - target: {fileID: 5417777325475075346, guid: 75db4e4af643d35439f44e5af59d2bd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05498992
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 5417777325475075346, guid: 75db4e4af643d35439f44e5af59d2bd4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1547,6 +1550,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6188236308809215764, guid: 75db4e4af643d35439f44e5af59d2bd4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1530077860}
+    - targetCorrespondingSourceObject: {fileID: 6188236308809215764, guid: 75db4e4af643d35439f44e5af59d2bd4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1530077865}
   m_SourcePrefab: {fileID: 100100000, guid: 75db4e4af643d35439f44e5af59d2bd4, type: 3}
 --- !u!1 &1530077859 stripped
 GameObject:
@@ -1574,6 +1580,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1530077865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530077859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d4b49307b583c4091332f6cb7bce62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  direction: {x: -1, y: 0}
 --- !u!1 &1658342956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1912,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1976719153 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3937493891285462825, guid: d067bf0eb18cbd34284cf963b21ad35e, type: 3}
+  m_PrefabInstance: {fileID: 538504347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1976719159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976719153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31d4b49307b583c4091332f6cb7bce62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  direction: {x: -1, y: 0}
 --- !u!1 &2070079778 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6565060239121031512, guid: f6090addb311a7f40a5561bc7a9d30cb, type: 3}
@@ -1909,7 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7ed8a6605ae3542a1b1e54d8b536af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2000
+  moveSpeed: 1500
   jumpForce: 8
 --- !u!70 &2070079783
 CapsuleCollider2D:
