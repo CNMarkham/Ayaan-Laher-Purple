@@ -74,14 +74,20 @@ public class NewBehaviourScript : MonoBehaviour
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
         rb.isKinematic = true;
-       rb.velocity = Vector3.zero;
-
+        rb.velocity = Vector3.zero;
+         
         for (int i = 0; 1 < 8; i++)
         {
             bigRenderer.enabled ^= true;
             smallRenderer.enabled ^= true;
             yield return new WaitForSeconds(0.25f);
         }
+
+        rb.isKinematic = false;
+        rb.velocity = velocity;
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<CapsuleCollider2D>().enabled = true;
+
     }
 
     // Update is called once per frame
