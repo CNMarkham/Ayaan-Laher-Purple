@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.right * horizontal * moveSpeed * Time.deltaTime);
 
         Jump();
+        FlipDirection();
+        ChangeAnimations();
     }
 
     private void Jump()
@@ -64,12 +66,12 @@ public class PlayerMovement : MonoBehaviour
             sprite.flipX = rb.velocity.x < 0;
         }
     }
-    private void ChageAnimations()
+    private void ChangeAnimations()
     {
         foreach (Animator animator in GetComponentsInChildren<Animator>())
         {
             animator.SetFloat("velocityX", rb.velocity.x);
-            animator.SetFloat("horizontalInput", Input.GetAxis("Horizontyl"));
+            animator.SetFloat("horizontalInput", Input.GetAxis("Horizontal"));
             animator.SetBool("inAir", hit.collider == null || jumping);
         }
     }
@@ -82,14 +84,25 @@ public class PlayerMovement : MonoBehaviour
         {
             distance += 1f;
         }
-
         RaycastHit2D hitTop = Physics2D.CircleCast(rb.position, 0.25f, Vector2.up, distance, LayerMask.GetMask("Default"));
-
-        BlockHitScript blockHit = hitTop.collider.gameObject.GetComponent<BlockHitScript>();
-        if (blockHit != null)
+        if (hitTop.collider != null)
         {
-            blockHit.Hit();
+            Vector3 velocity = rb.velocity;
+            velocity.y = 0;
+            rb.velocity = velocity;
+            jumping = false;
+
+            BlockHitScript blockHit = hitTop.collider.gameObject.GetComponent<BlockHitScript>();
+            if (blockHit != null)
+            {
+                blockHit.Hit();
+            }
         }
+
+       
+       
+
     }
+    
 }
 
