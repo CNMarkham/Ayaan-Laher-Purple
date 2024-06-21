@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Animator animator in GetComponentsInChildren<Animator>())
         {
             animator.SetFloat("velocityX", rb.velocity.x);
-            animator.SetFloat("horizontalInput", Input.GetAxis("Horizontal"));
+            animator.SetFloat("horizontal Input", Input.GetAxis("Horizontal"));
             animator.SetBool("inAir", hit.collider == null || jumping);
         }
     }

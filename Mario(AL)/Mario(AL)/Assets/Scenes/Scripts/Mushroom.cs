@@ -12,7 +12,7 @@ public class Mushroom : MonoBehaviour
         }
         else
         {
-            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
 
     }
