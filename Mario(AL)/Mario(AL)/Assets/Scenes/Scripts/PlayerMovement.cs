@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (hit.collider != null && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("hello");
+            //Debug.Log("hello");
             Vector3 velocity = rb.velocity;
             velocity.y = jumpForce;
             rb.velocity = velocity;

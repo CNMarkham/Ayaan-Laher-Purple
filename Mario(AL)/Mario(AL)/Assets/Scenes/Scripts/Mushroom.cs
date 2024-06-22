@@ -8,12 +8,11 @@ public class Mushroom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("hi");
             collision.gameObject.GetComponent<PlayerBehaviour>().Grow();
-        }
-        else
-        {
             Destroy(gameObject);
         }
+        
 
     }
 }
