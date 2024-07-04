@@ -8,7 +8,6 @@ public class Tetromino : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left;
@@ -19,11 +18,16 @@ public class Tetromino : MonoBehaviour
             transform.position += Vector3.right;
         }
 
+        float tempTime = fallTime; 
         if (Time.time - previousTime > fallTime)
         {
             transform.position += Vector3.down;
             previousTime = Time.time;
         }
 
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            
+        }
     }   
 }
