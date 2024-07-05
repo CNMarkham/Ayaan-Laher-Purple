@@ -5,6 +5,8 @@ public class Tetromino : MonoBehaviour
 {
     private float previousTime;
     public float  fallTime = 0.8f;
+    public static int width = 10;
+    public static int height = 20;
     // Update is called once per frame
     void Update()
     {
@@ -19,15 +21,20 @@ public class Tetromino : MonoBehaviour
         }
 
         float tempTime = fallTime; 
-        if (Time.time - previousTime > fallTime)
+        if (Time.time - previousTime > tempTime)
         {
             transform.position += Vector3.down;
             previousTime = Time.time;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            
+            tempTime = tempTime / 10;
         }
     }   
+
+    public bool ValidMove()
+    {
+
+    }
 }
