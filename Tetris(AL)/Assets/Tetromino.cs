@@ -31,10 +31,18 @@ public class Tetromino : MonoBehaviour
         {
             tempTime = tempTime / 10;
         }
-    }   
+    }
 
     public bool ValidMove()
     {
-
+        foreach (Transform child in transform)
+        {
+            int x = Mathf.RoundToInt(child.transform.position.x);
+            int y = Mathf.RoundToInt(child.transform.position.y);
+            if (x<0 || y<0 || x>= width || y>= height)
+            {
+                return false;
+            }
+        }
+        return true;
     }
-}
