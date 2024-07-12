@@ -4,7 +4,7 @@ using UnityEngine;
 public class Tetromino : MonoBehaviour
 {
     private float previousTime;
-    public float  fallTime = 0.8f;
+    public float fallTime = 0.8f;
     public static int width = 10;
     public static int height = 20;
     // Update is called once per frame
@@ -13,17 +13,33 @@ public class Tetromino : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left;
+
+            if (!ValidMove())
+            {
+                transform.position += Vector3.right;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             transform.position += Vector3.right;
+
+            if (!ValidMove())
+            {
+                transform.position += Vector3.left;
+            }
         }
 
-        float tempTime = fallTime; 
+        float tempTime = fallTime;
         if (Time.time - previousTime > tempTime)
         {
             transform.position += Vector3.down;
+
+            if(!ValidMove())
+            {
+                transform.position += Vector3.up;
+            }
+
             previousTime = Time.time;
         }
 
@@ -39,10 +55,11 @@ public class Tetromino : MonoBehaviour
         {
             int x = Mathf.RoundToInt(child.transform.position.x);
             int y = Mathf.RoundToInt(child.transform.position.y);
-            if (x<0 || y<0 || x>= width || y>= height)
+            if (x < 0 || y < 0 || x >= width || y >= height)
             {
                 return false;
             }
         }
         return true;
     }
+}
