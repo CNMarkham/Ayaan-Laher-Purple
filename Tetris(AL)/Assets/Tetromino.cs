@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Tetromino : MonoBehaviour
 {
-    private float previousTime;
+    private float previousTime; // The acessor is private the type is float the name is previousTime
     public float fallTime = 0.8f;
     public static int width = 10;
     public static int height = 20;
+    public Vector3 rotationPoint;
+
     // Update is called once per frame
+    // What is a variable?
+    // A: A variable is used to store data
+    // It has a acessoer a data type and a name.
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
