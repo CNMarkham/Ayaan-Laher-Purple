@@ -15,6 +15,17 @@ public class Tetromino : MonoBehaviour
     // It has a acessoer a data type and a name.
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
+            transform.RotateAround(convertedPoint, Vector3.forward, 90);
+            if (!ValidMove())
+            {
+                transform.RotateAround(convertedPoint, Vector3.forward, -90);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left;
@@ -36,6 +47,11 @@ public class Tetromino : MonoBehaviour
         }
 
         float tempTime = fallTime;
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            tempTime = tempTime / 10;
+        }
         if (Time.time - previousTime > tempTime)
         {
             transform.position += Vector3.down;
@@ -48,10 +64,6 @@ public class Tetromino : MonoBehaviour
             previousTime = Time.time;
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            tempTime = tempTime / 10;
-        }
     }
 
     public bool ValidMove()
