@@ -299,9 +299,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &842304625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842304626}
+  - component: {fileID: 842304627}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842304626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842304625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 17, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842304627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842304625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5736138e26eb0af4aba3068b9e4a6083, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tetrominoes:
+  - {fileID: 4121167107736532125, guid: 13b976d1a13c83e40ac8daebcc90bd57, type: 3}
+  - {fileID: 7106185685420523551, guid: 532ce7584565bf94aa0f8ff305311168, type: 3}
+  - {fileID: 5773814876140041896, guid: 5bec827aa403b9d4094f66e1977a2405, type: 3}
+  - {fileID: 6765283384656172571, guid: 9b07a94facd2e964697625ad5547d2ce, type: 3}
+  - {fileID: 4699576369127753476, guid: cfe9fe12c8673ff42ba8f47d1d1d0d32, type: 3}
+  - {fileID: 6496779922041117159, guid: 15df7b1794a852e43a085e20dc9e6b7b, type: 3}
+  - {fileID: 2642633481479913557, guid: 7748b5c3605e95945ac8b57c8e50c8f2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 90072439}
+  - {fileID: 842304626}

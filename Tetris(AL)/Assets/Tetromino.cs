@@ -8,6 +8,7 @@ public class Tetromino : MonoBehaviour
     public static int width = 10;
     public static int height = 20;
     public Vector3 rotationPoint;
+    public static Transform[,] grid = new Transform[width, height];
 
     // Update is called once per frame
     // What is a variable?
@@ -15,7 +16,6 @@ public class Tetromino : MonoBehaviour
     // It has a acessoer a data type and a name.
     void Update()
     {
-
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
@@ -56,9 +56,11 @@ public class Tetromino : MonoBehaviour
         {
             transform.position += Vector3.down;
 
-            if(!ValidMove())
+            if (!ValidMove())
             {
                 transform.position += Vector3.up;
+                this.enabled = false;
+                FindObjectOfType<Spawner>().SpawnTetromino();
             }
 
             previousTime = Time.time;
@@ -76,7 +78,22 @@ public class Tetromino : MonoBehaviour
             {
                 return false;
             }
+
+            if (grid[x, y] != null)
+            {
+                return false;
+            }
         }
         return true;
+    }
+
+    public void AddToGrid()
+    {
+        foreach (Transform child in transform)
+        {
+            int x = Mathf.RoundToInt(child.transform.position.x);
+            int y = Mathf.RoundToInt(child.transform.position.y);
+            grid[x, y] = child;
+        }       
     }
 }
