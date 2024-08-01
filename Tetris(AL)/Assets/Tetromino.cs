@@ -9,6 +9,51 @@ public class Tetromino : MonoBehaviour
     public static int height = 20;
     public Vector3 rotationPoint;
     public static Transform[,] grid = new Transform[width, height];
+    public void CheckLines()
+    {
+        for (int i = height - 1; >= 0; i--)
+        {
+            if (HasLine(i))
+            {
+                DeleteLine(i);
+                RowDown(i);
+            }
+        }
+    }
+
+    public bool HasLine(int i)
+    {
+        for (int j=0; j < width; j++)
+        {
+            if (grid[j,i] == null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public bool DeleteLine(int i)
+    {
+        for(int y = i; y < height; y++)
+        {
+            for(int x = 0; x < width; x++)
+            {
+                if (grid[x, y] != null)
+                {
+                    grid[x, y - 1] = grid[x, y];
+                    grid[x, y] = null;
+                    grid[x, y - 1].transform.position += Vector3.down;
+
+                }
+            }
+        }
+    }
+
+    public void RowDown(int i)
+    {
+ 
+    }
 
     // Update is called once per frame
     // What is a variable?
@@ -60,6 +105,8 @@ public class Tetromino : MonoBehaviour
             {
                 transform.position += Vector3.up;
                 this.enabled = false;
+                AddToGrid();
+                CheckForLines();
                 FindObjectOfType<Spawner>().SpawnTetromino();
             }
 
