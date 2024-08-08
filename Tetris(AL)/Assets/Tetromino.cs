@@ -11,7 +11,7 @@ public class Tetromino : MonoBehaviour
     public static Transform[,] grid = new Transform[width, height];
     public void CheckLines()
     {
-        for (int i = height - 1; >= 0; i--)
+        for (int i = height - 1; i >= 0; i--)
         {
             if (HasLine(i))
             {
@@ -33,7 +33,7 @@ public class Tetromino : MonoBehaviour
         return true;
     }
 
-    public bool DeleteLine(int i)
+    public void DeleteLine(int i)
     {
         for(int y = i; y < height; y++)
         {
@@ -106,7 +106,7 @@ public class Tetromino : MonoBehaviour
                 transform.position += Vector3.up;
                 this.enabled = false;
                 AddToGrid();
-                CheckForLines();
+                CheckLines();
                 FindObjectOfType<Spawner>().SpawnTetromino();
             }
 
